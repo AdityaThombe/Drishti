@@ -33,14 +33,16 @@ export function About() {
       <div className="about__grid">
         <div className="about__copy">
           <p className="kicker">The Quest</p>
-          <h2 className="heading"><span className="shimmer">About the Hackathon</span></h2>
+          <h2 className="heading"><span className="shimmer">About Drishti</span></h2>
           <p>
-            INNOV8 TMRRW is a national-level hackathon designed to bring together innovators, developers, and
-            problem-solvers to build technology-driven solutions for real-world challenges.
+            <em>DRISHTI</em> is a student-led UI/UX Designathon organized by CESA, Vidyalankar Institute of Technology
+            (VIT), Mumbai, in collaboration with Friends of Figma Mumbai and .xyz, focused on user-centric design,
+            creativity, UX thinking, visual design and rapid prototyping.
           </p>
           <p>
-            Guided by the theme <em>“Build. Beyond. Infinity.”</em>, the event encourages participants to think
-            beyond conventional limits and transform ideas into impactful innovations.
+            Teams of two are shortlisted on their resume and portfolio, then face a fresh problem statement in a
+            3-hour offline design sprint with hands-on mentoring and an industry session by Friends of Figma. The
+            Top 10 teams pitch their solutions to a jury of senior product designers.
           </p>
         </div>
         <div className="about__art">
@@ -123,25 +125,33 @@ export function Prizes() {
       </header>
       <div className="prizes__row">
         <Prize label="Winner" amount={10000} variant="winner" delay="0s" />
-        <Prize label="1st Runner-Up" amount={5000} variant="runner" delay="0.15s" />
+        <Prize label="Runner-Up" amount={5000} variant="runner" delay="0.15s" />
       </div>
+      <p className="prizes__extra" data-reveal>+ Figma / Friends of Figma merchandise for the winners · Certificates for all participants</p>
     </section>
   )
 }
 
 const rules = [
-  'Each team must consist of 2 to 4 participants.',
-  'Teams may be inter-departmental and inter-year.',
-  'Pre-built projects are strictly prohibited.',
-  'All development activity will be monitored throughout the hackathon.',
-  'Participants must adhere to ethical coding practices and fair-play standards.',
+  'Each team must consist of exactly 2 participants; each participant can be part of only one team.',
+  "Round 1 is based on both members' Resume and Portfolio / Case Study. Shortlisted teams qualify for the offline Designathon.",
+  'The problem statement is revealed at the beginning of the offline round, and teams get 3 hours to develop their design solution.',
+  'Each team must submit a Figma file / link and a working prototype link within the given deadline.',
+  'All submissions must be original work by the team. Plagiarism, copying or pre-existing work may result in disqualification.',
+  "AI tools may support ideation and research, but the core design solution must be the team's own work.",
+  'The Top 10 teams qualify for the final pitch: 5 minutes of presentation + 2 minutes of Q&A.',
+  'Participants must bring their own laptops and chargers. The decision of the judging panel is final and binding.',
 ]
 
 const faqs = [
-  ['Who can participate in INNOV8 TMRRW?', 'The hackathon is open to all eligible students who meet the team composition criteria.'],
-  ['Can we participate with an existing idea?', 'You can bring an idea, but pre-built projects are strictly prohibited — all development must happen during the hackathon.'],
-  ['Is cross-department or cross-year participation allowed?', 'Yes. Teams may be inter-departmental and inter-year.'],
-  ['Will mentorship be provided during the event?', 'Yes. Mentorship Day includes sessions by college faculty with guidance on technical approach and feasibility.'],
+  ['How many members can be in a team?', 'Exactly 2. Individual participation is not allowed.'],
+  ['What is required for Round 1?', 'The Resume and Portfolio / Case Study of both team members. Teams are shortlisted on their previous work, design thinking, creativity and overall potential.'],
+  ['When will the problem statement be released?', 'At the beginning of the offline designathon at VIT, Mumbai.'],
+  ['How long is the design sprint?', '3 hours to understand the problem, ideate, design and prototype your solution.'],
+  ['What do I need to submit?', 'A Figma file and a working prototype link, before the submission deadline.'],
+  ['How many teams reach the final pitch?', 'The Top 10 teams — 5 minutes of presentation followed by 2 minutes of jury Q&A.'],
+  ['Do I need my own laptop?', 'Yes. Bring your laptop, charger and a Figma account.'],
+  ['Who will judge the event?', 'Senior / Lead Product Designers from Friends of Figma Mumbai, as per the collaboration.'],
 ]
 
 export function RulesFaq() {
@@ -193,16 +203,16 @@ export function RulesFaq() {
 export function Partners() {
   return (
     <section id="partners" className="section partners">
-      <header className="section__head" data-reveal>
+      <header className="section__head">
         <p className="kicker">Backed by</p>
         <h2 className="heading heading--gold">Sponsorship &amp; Partnership</h2>
       </header>
       <div className="partners__row">
-        <div className="partner" data-reveal>
+        <div className="partner">
           <p className="partner__role">Community Partner</p>
           <div className="partner__logo partner__logo--circle"><img src={img('fof.png')} alt="FOF Mumbai" /></div>
         </div>
-        <div className="partner" data-reveal style={{ '--delay': '0.15s' }}>
+        <div className="partner">
           <p className="partner__role">Domain Partner</p>
           <div className="partner__logo"><img src={img('xyz-white.png')} alt=".xyz" /></div>
         </div>
@@ -215,12 +225,12 @@ export function Footer() {
   const quick = sections.filter(([, id]) => ['home', 'about', 'journey', 'faq'].includes(id))
   return (
     <footer id="contact" className="footer">
-      <img className="footer__castle" src={img('bg-castle.png')} alt="" />
+      <img className="footer__castle" src={img('footer-castle.png')} alt="" />
       <div className="footer__grid">
         <div className="footer__brand" data-reveal>
           <p className="footer__logo"><span className="shimmer">Drishti</span></p>
           <p>A Thousand Nights. One Design Challenge.</p>
-          <p>An inter-collegiate UI/UX designathon where creativity meets imagination.</p>
+          <p>A UI/UX designathon by CESA VIT with Friends of Figma Mumbai.</p>
         </div>
         <div data-reveal style={{ '--delay': '0.1s' }}>
           <p className="footer__title">Quick Links</p>
@@ -253,7 +263,7 @@ export function Footer() {
         <div className="footer__girl"><img src={img('girl.png')} alt="" /></div>
       </div>
 
-      <p className="footer__copy">© 2026 ENIGMA. All rights reserved.</p>
+      <p className="footer__copy">© 2026 CESA, VIT Mumbai. All rights reserved.</p>
     </footer>
   )
 }

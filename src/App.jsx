@@ -4,7 +4,6 @@ import { usePath, useReveal } from './hooks'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Journey from './components/Journey'
-import Particles from './components/Particles'
 import { About, Footer, Partners, Prizes, RulesFaq } from './components/Sections'
 import Team from './pages/Team'
 
@@ -40,7 +39,6 @@ export default function App() {
     <>
       <div className="page-bg" aria-hidden="true" />
       <Nav path={path} />
-      <Particles />
       {isTeam ? <Team key="team" /> : <Home key="home" />}
     </>
   )

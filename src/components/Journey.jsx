@@ -3,7 +3,7 @@ import { clamp, img } from '../hooks'
 
 // Path + points exported from the Figma "Vector lines" node (viewBox 1023 × 1442.2)
 const PATH =
-  'M123.554 86.6C47.2206 176.933 -59.646 385.9 123.554 499.1C306.754 612.3 230.221 787.6 169.054 861.1C118.887 1044.6 132.754 1339.3 589.554 1050.1C1046.35 760.9 1006.22 1149.93 929.054 1380.6'
+  'M123.554 86.6C47.2206 176.933 -59.646 385.9 123.554 499.1C306.754 612.3 230.221 787.6 169.054 861.1C118.887 1044.6 132.754 1339.3 589.554 1050.1C1046.35 760.9 1006.22 1149.93 936.4 1355.6'
 
 // Stage = Figma canvas region x 0–1440, y 2300–3800. All coordinates below are Figma px.
 const X = (x) => `${(x / 1440) * 100}%`
@@ -136,7 +136,6 @@ export default function Journey() {
           <path d={PATH} ref={pathRef} className="journey__line" />
           {[...steps.map((s) => s.dot), FINAL_DOT].map(([cx, cy], i) => (
             <g key={i} className="journey__dot" data-step={i} transform={`translate(${cx} ${cy})`}>
-              <circle r="46" className="journey__halo" />
               <circle r="25" className="journey__core" />
             </g>
           ))}
