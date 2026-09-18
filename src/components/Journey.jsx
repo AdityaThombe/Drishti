@@ -160,7 +160,7 @@ export default function Journey() {
         <p className="ms__final" data-step={steps.length} style={{ left: X(1153), top: Y(3707) }}>Final</p>
 
         <div className="journey__genie" data-reveal style={{ left: X(1085), top: Y(2440), width: W(420) }}>
-          <img src={img('jenie.png')} alt="Genie" />
+          <img src={img('jenie.webp')} alt="Genie" />
         </div>
       </div>
 

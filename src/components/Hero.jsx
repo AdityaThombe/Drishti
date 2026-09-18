@@ -8,11 +8,11 @@ export const REGISTER_URL = '#'
 
 // Scene layers on the 1440×1024 Figma frame. m = mouse parallax strength
 const layers = [
-  { src: 'hero-bg.png', left: -187, top: -47, width: 1903, m: 6 },
-  { src: 'moon.png', left: 700, top: 303, width: 523, m: 14, cls: 'layer--moon' },
-  { src: 'castle.png', left: -288, top: 249, width: 1751, m: 22 },
-  { src: 'clouds.png', left: -6, top: 0, width: 1588, height: 894, m: 30, cls: 'layer--clouds' },
-  { src: 'land.png', left: -94, top: -31, width: 2003, height: 1128, m: 40, cls: 'layer--land' },
+  { src: 'hero-bg.webp', left: -187, top: -47, width: 1903, m: 6 },
+  { src: 'moon.webp', left: 700, top: 303, width: 523, m: 14, cls: 'layer--moon' },
+  { src: 'castle.webp', left: -288, top: 249, width: 1751, m: 22 },
+  { src: 'clouds.webp', left: -6, top: 0, width: 1588, height: 894, m: 30, cls: 'layer--clouds' },
+  { src: 'land.webp', left: -94, top: -31, width: 2003, height: 1128, m: 40, cls: 'layer--land' },
 ]
 
 const pad = (n) => String(n).padStart(2, '0')

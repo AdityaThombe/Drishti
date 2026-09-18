@@ -11,7 +11,7 @@
 /* the same backdrop image is used by every section in Figma, so it stays put while content scrolls */
 .page-bg {
   position: fixed; inset: 0; z-index: -1;
-  background: url('/figma/background.png') center / cover no-repeat;
+  background: url('/figma/background.webp') center / cover no-repeat;
 }
 .page-bg::after { content: ''; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.03); }
 
@@ -117,7 +117,7 @@ section, footer { scroll-margin-top: 80px; }
   /* bottom edge dissolves into the page backdrop behind it (same image About uses) */
   -webkit-mask-image: linear-gradient(180deg, #000 calc(100% - 80px), transparent);
   mask-image: linear-gradient(180deg, #000 calc(100% - 80px), transparent);
-  background: #17123d url("/figma/hero-bg.png") center bottom / cover no-repeat;
+  background: #17123d url("/figma/hero-bg.webp") center bottom / cover no-repeat;
   --mx: 0; --my: 0;
 }
 .hero__scene {
@@ -241,7 +241,7 @@ section, footer { scroll-margin-top: 80px; }
 .about::before { content: ''; position: absolute; inset: 0; z-index: -2; background: linear-gradient(180deg, transparent 0, rgba(10, 7, 34, 0.72) 220px); }
 .about__bg {
   position: absolute; inset: 0; z-index: -1;
-  background: url('/figma/background.png') center / cover no-repeat fixed; /* lines up with .page-bg */
+  background: url('/figma/background.webp') center / cover no-repeat fixed; /* lines up with .page-bg */
   clip-path: inset(100% 0 0 0);
   transition: clip-path 0.8s cubic-bezier(0.65, 0, 0.35, 1);
 
@@ -392,7 +392,7 @@ section, footer { scroll-margin-top: 80px; }
    Footer
    ========================================================= */
 .footer { position: relative; z-index: 6; overflow: hidden; background: var(--navy); box-shadow: 0 -30px 60px rgba(0, 0, 0, 0.45); padding: 80px var(--gutter) 40px; min-height: 860px; isolation: isolate; }
-.footer::before { content: ''; position: absolute; inset: 0; z-index: -2; background: url('/figma/wallpaper.png') center / cover; opacity: 0.06; mix-blend-mode: lighten; }
+.footer::before { content: ''; position: absolute; inset: 0; z-index: -2; background: url('/figma/wallpaper.webp') center / cover; opacity: 0.06; mix-blend-mode: lighten; }
 .footer__castle { position: absolute; z-index: -1; left: 0; bottom: 0; width: 100%; max-width: none; opacity: 0.31; transform: scaleX(-1); }
 .footer__grid { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 0.8fr; gap: 40px; }
 .footer__logo { font-family: var(--display); font-size: clamp(48px, 4.2vw, 60px); line-height: 1.8; margin-bottom: 14px; width: fit-content; }
@@ -490,8 +490,8 @@ section, footer { scroll-margin-top: 80px; }
 .tcard__genie {
   position: absolute; left: -15.92px; top: -42.4px; width: 136.8px; height: 207.08px;
   background: #000; opacity: 0.52; transform: scaleX(-1);
-  -webkit-mask: url('/figma/team-mask.png') no-repeat 14.56px 37.04px / 119.09px 132.99px;
-  mask: url('/figma/team-mask.png') no-repeat 14.56px 37.04px / 119.09px 132.99px;
+  -webkit-mask: url('/figma/team-mask.webp') no-repeat 14.56px 37.04px / 119.09px 132.99px;
+  mask: url('/figma/team-mask.webp') no-repeat 14.56px 37.04px / 119.09px 132.99px;
 }
 .tcard__photo { position: absolute; max-width: none; object-fit: cover; transform-origin: 50% 100%; transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .tcard:hover .tcard__photo { transform: scale(1.05); }
@@ -502,3 +502,6 @@ section, footer { scroll-margin-top: 80px; }
 .tcard__links a { display: block; width: 18.4px; height: 18.4px; opacity: 0.57; transition: opacity 0.25s ease, transform 0.25s ease; }
 .tcard__links a:hover { opacity: 1; transform: translateY(-2px); }
 .tcard__links img { width: 100%; height: 100%; object-fit: contain; }
+
+/* Intro animations wait until the splash has lifted (html.is-ready is set in main.jsx) */
+html:not(.is-ready) :is(.nav, .layer--moon, .layer--clouds, .layer--land, .intro) { animation-play-state: paused; }

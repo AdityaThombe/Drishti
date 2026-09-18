@@ -47,7 +47,7 @@ export function About() {
         </div>
         <div className="about__art">
           <div className="tilt" ref={cardRef}>
-            <img className="about__aladin float" src={img('aladin.png')} alt="Aladdin and Jasmine on the magic carpet" />
+            <img className="about__aladin float" src={img('aladin.webp')} alt="Aladdin and Jasmine on the magic carpet" />
           </div>
         </div>
       </div>
@@ -81,7 +81,7 @@ function Prize({ label, amount, variant, delay }) {
     <div className={`prize prize--${variant}`} ref={ref} data-reveal style={{ '--delay': delay }}>
       <p className="prize__label">{label}</p>
       <p className="prize__amount"><CountUp value={amount} run={seen} /></p>
-      <img className="prize__carpet" src={img('carpet.png')} alt="" />
+      <img className="prize__carpet" src={img('carpet.webp')} alt="" />
     </div>
   )
 }
@@ -118,7 +118,7 @@ export function Prizes() {
   useMonkeyDrop(monkeyRef)
   return (
     <section id="prizes" className="section prizes">
-      <img className="prizes__monkey" ref={monkeyRef} src={img('monkey.png')} alt="Abu the monkey" />
+      <img className="prizes__monkey" ref={monkeyRef} src={img('monkey.webp')} alt="Abu the monkey" />
       <header className="section__head" data-reveal>
         <p className="kicker">Prize Pool</p>
         <h2 className="heading"><span className="shimmer">The Treasure Awaits</span></h2>
@@ -185,8 +185,8 @@ export function RulesFaq() {
                   <button className="faq__q" onClick={() => setOpen(isOpen ? -1 : i)} aria-expanded={isOpen}>
                     <span>{q}</span>
                     <span className="faq__icon" aria-hidden="true">
-                      <img className="faq__plus" src={img('plus.png')} alt="" />
-                      <img className="faq__minus" src={img('minus.png')} alt="" />
+                      <img className="faq__plus" src={img('plus.webp')} alt="" />
+                      <img className="faq__minus" src={img('minus.webp')} alt="" />
                     </span>
                   </button>
                   <div className="faq__a"><p>{a}</p></div>
@@ -210,11 +210,11 @@ export function Partners() {
       <div className="partners__row">
         <div className="partner">
           <p className="partner__role">Community Partner</p>
-          <div className="partner__logo partner__logo--circle"><img src={img('fof.png')} alt="FOF Mumbai" /></div>
+          <div className="partner__logo partner__logo--circle"><img src={img('fof.webp')} alt="FOF Mumbai" /></div>
         </div>
         <div className="partner">
           <p className="partner__role">Domain Partner</p>
-          <div className="partner__logo"><img src={img('xyz-white.png')} alt=".xyz" /></div>
+          <div className="partner__logo"><img src={img('xyz-white.webp')} alt=".xyz" /></div>
         </div>
       </div>
     </section>
@@ -225,7 +225,7 @@ export function Footer() {
   const quick = sections.filter(([, id]) => ['home', 'about', 'journey', 'faq'].includes(id))
   return (
     <footer id="contact" className="footer">
-      <img className="footer__castle" src={img('footer-castle.png')} alt="" />
+      <img className="footer__castle" src={img('footer-castle.webp')} alt="" />
       <div className="footer__grid">
         <div className="footer__brand" data-reveal>
           <p className="footer__logo"><span className="shimmer">Drishti</span></p>
@@ -238,7 +238,7 @@ export function Footer() {
             {quick.map(([label, id]) => (
               <li key={id}>
                 <button onClick={() => scrollToId(id)}>
-                  <img src={img('yoga.png')} alt="" />
+                  <img src={img('yoga.webp')} alt="" />
                   {label}
                 </button>
               </li>
@@ -256,11 +256,11 @@ export function Footer() {
 
       <div className="footer__people" data-reveal>
         <div className="footer__bubble">
-          <img src={img('cloud.png')} alt="" />
+          <img src={img('cloud.webp')} alt="" />
           <span>So… did you register yet?</span>
         </div>
-        <div className="footer__boy"><img src={img('girl.png')} alt="" /></div>
-        <div className="footer__girl"><img src={img('girl.png')} alt="" /></div>
+        <div className="footer__boy"><img src={img('girl.webp')} alt="" /></div>
+        <div className="footer__girl"><img src={img('girl.webp')} alt="" /></div>
       </div>
 
       <p className="footer__copy">© 2026 CESA, VIT Mumbai. All rights reserved.</p>

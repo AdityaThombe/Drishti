@@ -12,9 +12,9 @@ export function RegisterButton({ href = '#' }) {
   return (
     <a className="fbtn fbtn--register" href={href}>
       <span className="fbtn__fill" />
-      <Crop className="fbtn__castle" src="bg-castle.png" box={{ left: 57, top: -8.5, width: 187, height: 106.5 }} w="374.37%" h="370.05%" l="-51.2%" t="-235.03%" />
+      <Crop className="fbtn__castle" src="bg-castle.webp" box={{ left: 57, top: -8.5, width: 187, height: 106.5 }} w="374.37%" h="370.05%" l="-51.2%" t="-235.03%" />
       <span className="fbtn__fly">
-        <Crop className="fbtn__carpet" src="lamp.png" box={{ left: 258, top: 11, width: 86.5, height: 37.3 }} w="168.67%" h="220.4%" l="-31.02%" t="-42.02%" />
+        <Crop className="fbtn__carpet" src="lamp.webp" box={{ left: 258, top: 11, width: 86.5, height: 37.3 }} w="168.67%" h="220.4%" l="-31.02%" t="-42.02%" />
         <span className="fbtn__panel" />
       </span>
       <span className="fbtn__labels" style={{ left: 32, width: 168 }}>
@@ -31,14 +31,14 @@ export function ExploreButton({ onClick }) {
   return (
     <button type="button" className="fbtn fbtn--explore" onClick={onClick}>
       <span className="fbtn__fill" />
-      <Crop className="fbtn__castle" src="bg-castle.png" box={{ left: 61, top: -9.2, width: 200.3, height: 114 }} w="374.37%" h="370.05%" l="-51.2%" t="-235.03%" />
+      <Crop className="fbtn__castle" src="bg-castle.webp" box={{ left: 61, top: -9.2, width: 200.3, height: 114 }} w="374.37%" h="370.05%" l="-51.2%" t="-235.03%" />
       <span className="fbtn__fly">
         <span className="fbtn__panel" />
-        <Crop className="fbtn__carpet" src="lamp.png" box={{ left: 262, top: 8.5, width: 92.7, height: 39.9 }} w="168.67%" h="220.4%" l="-31.02%" t="-42.02%" />
+        <Crop className="fbtn__carpet" src="lamp.webp" box={{ left: 262, top: 8.5, width: 92.7, height: 39.9 }} w="168.67%" h="220.4%" l="-31.02%" t="-42.02%" />
         {/* sparkle texture placed exactly as in Figma: 665 × 204 strip rotated 54°, screen-blended */}
         <span className="fbtn__shine">
           <span className="fbtn__shine-strip">
-            <img src={img('shine.png')} alt="" />
+            <img src={img('shine.webp')} alt="" />
           </span>
         </span>
       </span>

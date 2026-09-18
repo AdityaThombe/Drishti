@@ -8,10 +8,43 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon-dark-ink.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0f3b" />
     <title>Drishti · CESA × FOF</title>
     <meta name="description" content="DRISHTI — a UI/UX Designathon by CESA, Vidyalankar Institute of Technology (VIT), Mumbai, with Friends of Figma Mumbai. Offline finale on 9 Oct 2026." />
+
+    <!-- fetch the first screen early so it can appear in one go -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" />
+    <link rel="preload" href="/fonts/kingofthieves.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/figma/hero-bg.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/figma/castle.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/figma/land.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/figma/clouds.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/figma/moon.webp" as="image" type="image/webp" />
+
+    <!-- splash: shown instantly, removed by src/main.jsx once the first screen is ready -->
+    <style>
+      #splash {
+        position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center;
+        background: radial-gradient(ellipse at 50% 40%, #1d1654 0%, #0b0f3b 70%);
+        transition: opacity 0.6s ease, visibility 0.6s;
+      }
+      #splash.is-done { opacity: 0; visibility: hidden; }
+      #splash .carpet {
+        width: 132px; aspect-ratio: 1; background: #f3e3c4;
+        -webkit-mask: url('/favicon.svg') center / contain no-repeat; mask: url('/favicon.svg') center / contain no-repeat;
+        animation: splash-float 2.4s ease-in-out infinite;
+      }
+      #splash .bar { width: 120px; height: 2px; margin: -18px auto 0; border-radius: 2px; overflow: hidden; background: rgba(209, 179, 124, 0.2); }
+      #splash .bar::after { content: ''; display: block; width: 40%; height: 100%; background: #d1b37c; animation: splash-bar 1.2s ease-in-out infinite; }
+      @keyframes splash-float { 50% { transform: translateY(-8px) rotate(-2deg); } }
+      @keyframes splash-bar { from { transform: translateX(-100%); } to { transform: translateX(250%); } }
+      @media (prefers-reduced-motion: reduce) { #splash .carpet, #splash .bar::after { animation: none; } }
+    </style>
   </head>
   <body>
+    <div id="splash" aria-hidden="true"><div><div class="carpet"></div><div class="bar"></div></div></div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

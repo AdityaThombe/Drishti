@@ -53,7 +53,7 @@ export default function Nav({ path }) {
     <header className={`nav ${scrolled ? 'nav--scrolled' : ''} ${open ? 'nav--open' : ''}`}>
       <div className="nav__bar">
         <button className="nav__logo" onClick={() => go('home')} aria-label="CESA home">
-          <img src={img('logo.png')} alt="CESA" />
+          <img src={img('logo.webp')} alt="CESA" />
         </button>
         <nav className="nav__links">
           {[...sections.slice(0, -1), ['Team', 'team'], sections.at(-1)].map(([label, id]) => (
