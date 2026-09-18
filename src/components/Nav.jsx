@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { img, scrollToId } from '../hooks'
+import { img, navigate, scrollToId } from '../hooks'
 
 export const sections = [
   ['Home', 'home'],
@@ -12,7 +12,8 @@ export const sections = [
   ['Contact', 'contact'],
 ]
 
-export default function Nav() {
+export default function Nav({ path }) {
+  const onTeam = path.replace(/\/$/, '') === '/team'
   const [scrolled, setScrolled] = useState(false)
   const [active, setActive] = useState('home')
   const [open, setOpen] = useState(false)
@@ -30,6 +31,7 @@ export default function Nav() {
       (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
       { rootMargin: '-45% 0px -50% 0px' },
     )
+    if (onTeam) setActive('team')
     sections.forEach(([, id]) => {
       const el = document.getElementById(id)
       if (el) io.observe(el)
@@ -38,10 +40,12 @@ export default function Nav() {
       window.removeEventListener('scroll', onScroll)
       io.disconnect()
     }
-  }, [])
+  }, [onTeam])
 
   const go = (id) => {
     setOpen(false)
+    if (id === 'team') return onTeam ? window.scrollTo({ top: 0, behavior: 'smooth' }) : navigate('/team')
+    if (onTeam) return navigate(id === 'home' ? '/' : `/#${id}`)
     scrollToId(id)
   }
 
@@ -52,7 +56,7 @@ export default function Nav() {
           <img src={img('logo.png')} alt="CESA" />
         </button>
         <nav className="nav__links">
-          {sections.map(([label, id]) => (
+          {[...sections.slice(0, -1), ['Team', 'team'], sections.at(-1)].map(([label, id]) => (
             <button key={id} className={active === id ? 'is-active' : ''} onClick={() => go(id)}>
               {label}
             </button>

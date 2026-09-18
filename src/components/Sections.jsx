@@ -2,13 +2,36 @@ import { useEffect, useRef, useState } from 'react'
 import { img, reducedMotion, scrollToId, useSeen, useTilt } from '../hooks'
 import { sections } from './Nav'
 
+// Adds `className` to the element once it meets the observer options (fires once)
+function useStage(ref, className, options) {
+  const key = JSON.stringify(options)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const io = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) return
+      el.classList.add(className)
+      io.disconnect()
+    }, JSON.parse(key))
+    io.observe(el)
+    return () => io.disconnect()
+  }, [ref, className, key])
+}
+
+// "Covers the screen": the section's top edge has passed the top 20% of the viewport
+const COVERS_SCREEN = { rootMargin: '0px 0px -80% 0px' }
+
 export function About() {
+  const sectionRef = useRef(null)
   const cardRef = useRef(null)
+  useStage(sectionRef, 'bg-in', { threshold: 0.1 }) // background wipes up as it enters
+  useStage(sectionRef, 'is-in', COVERS_SCREEN) // copy + art once it fills the screen
   useTilt(cardRef, 12)
   return (
-    <section id="about" className="section about">
+    <section id="about" className="section about" ref={sectionRef}>
+      <div className="about__bg" aria-hidden="true" />
       <div className="about__grid">
-        <div className="about__copy" data-reveal>
+        <div className="about__copy">
           <p className="kicker">The Quest</p>
           <h2 className="heading"><span className="shimmer">About the Hackathon</span></h2>
           <p>
@@ -20,7 +43,7 @@ export function About() {
             beyond conventional limits and transform ideas into impactful innovations.
           </p>
         </div>
-        <div className="about__art" data-reveal style={{ '--delay': '0.15s' }}>
+        <div className="about__art">
           <div className="tilt" ref={cardRef}>
             <img className="about__aladin float" src={img('aladin.png')} alt="Aladdin and Jasmine on the magic carpet" />
           </div>
@@ -61,10 +84,39 @@ function Prize({ label, amount, variant, delay }) {
   )
 }
 
+// Abu hangs from the top of the screen only while Prizes covers it:
+// drops in once the section's top passes 20% of the screen, climbs out as soon as the
+// next section starts taking over (section bottom above 75% of the screen)
+function useMonkeyDrop(ref) {
+  useEffect(() => {
+    const el = ref.current
+    const section = el?.parentElement
+    if (!el || !section) return
+    let raf = 0
+    const update = () => {
+      raf = 0
+      const { top, bottom } = section.getBoundingClientRect()
+      const vh = window.innerHeight
+      el.classList.toggle('is-hanging', top <= vh * 0.2 && bottom >= vh * 0.75)
+    }
+    const onScroll = () => raf || (raf = requestAnimationFrame(update))
+    update()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => {
+      cancelAnimationFrame(raf)
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
+  }, [ref])
+}
+
 export function Prizes() {
+  const monkeyRef = useRef(null)
+  useMonkeyDrop(monkeyRef)
   return (
     <section id="prizes" className="section prizes">
-      <img className="prizes__monkey" data-reveal src={img('monkey.png')} alt="Abu the monkey" />
+      <img className="prizes__monkey" ref={monkeyRef} src={img('monkey.png')} alt="Abu the monkey" />
       <header className="section__head" data-reveal>
         <p className="kicker">Prize Pool</p>
         <h2 className="heading"><span className="shimmer">The Treasure Awaits</span></h2>
@@ -152,7 +204,7 @@ export function Partners() {
         </div>
         <div className="partner" data-reveal style={{ '--delay': '0.15s' }}>
           <p className="partner__role">Domain Partner</p>
-          <div className="partner__logo"><img src={img('xyz.png')} alt=".xyz" /></div>
+          <div className="partner__logo"><img src={img('xyz-white.png')} alt=".xyz" /></div>
         </div>
       </div>
     </section>

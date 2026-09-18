@@ -85,7 +85,7 @@ export default function Hero() {
       <div className="hero__content">
         <p className="hero__eyebrow intro intro--fade" style={{ '--d': '0.5s' }}>CESA × FOF PRESENTS</p>
         <h1 className="hero__title intro intro--rise" style={{ '--d': '0.2s' }}>
-          <span className="shimmer">The Design Quest</span>
+          <span className="shimmer">Drishti</span>
         </h1>
         <p className="hero__tagline intro intro--fade" style={{ '--d': '0.8s' }}>A Thousand Nights. One Design Challenge.</p>
         <p className="hero__sub intro intro--fade" style={{ '--d': '0.95s' }}>
@@ -98,9 +98,6 @@ export default function Hero() {
         </div>
       </div>
 
-      <button className="scroll-cue" onClick={() => scrollToId('about')} aria-label="Scroll down">
-        <span />
-      </button>
     </section>
   )
 }

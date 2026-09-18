@@ -21,7 +21,7 @@ export function useCountdown(target) {
 }
 
 // Adds `is-in` to every [data-reveal] element the first time it scrolls into view
-export function useReveal() {
+export function useReveal(key) {
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries) =>
@@ -32,9 +32,9 @@ export function useReveal() {
         }),
       { rootMargin: '0px 0px -10% 0px', threshold: 0.05 },
     )
-    document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el))
+    document.querySelectorAll('[data-reveal]:not(.is-in)').forEach((el) => io.observe(el))
     return () => io.disconnect()
-  }, [])
+  }, [key])
 }
 
 // True once the element has been seen
@@ -77,4 +77,20 @@ export function useTilt(ref, max = 10) {
 
 export function scrollToId(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+}
+
+// Minimal client-side routing (no dependency): '/', '/team'
+export function navigate(to) {
+  window.history.pushState({}, '', to)
+  window.dispatchEvent(new PopStateEvent('popstate'))
+}
+
+export function usePath() {
+  const [path, setPath] = useState(() => window.location.pathname)
+  useEffect(() => {
+    const onPop = () => setPath(window.location.pathname)
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
+  }, [])
+  return path
 }
