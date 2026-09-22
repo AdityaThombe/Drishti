@@ -15,7 +15,7 @@ createRoot(document.getElementById('root')).render(
 // The hero/nav intro animations wait for `html.is-ready` (see App.css).
 const onTeam = window.location.pathname.replace(/\/$/, '') === '/team'
 const firstScreen = onTeam
-  ? ['background', 'team-bg', 'bhavika', 'rohit', 'logo']
+  ? ['background', 'team-bg', 'team/ansh', 'team/rohit', 'logo']
   : ['hero-bg', 'moon', 'castle', 'clouds', 'land', 'logo']
 
 const loadImage = (name) =>

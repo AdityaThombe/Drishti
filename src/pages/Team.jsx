@@ -12,8 +12,8 @@ export default function Team() {
           </h1>
           <p className="team__sub intro intro--fade" style={{ '--d': '0.7s' }}>The people behind the journey</p>
         </header>
-        <div className="team__grid">
-          {keepers.map((p, i) => <TeamCard key={i} person={p} delay={0.1 * i} />)}
+        <div className="team__grid team__grid--center">
+          {keepers.map((p, i) => <TeamCard key={p.name} person={p} delay={0.1 * i} />)}
         </div>
       </section>
 
@@ -22,7 +22,7 @@ export default function Team() {
           <span className="shimmer">The Heads</span>
         </h2>
         <div className="team__grid">
-          {heads.map((p, i) => <TeamCard key={i} person={p} delay={0.1 * i} />)}
+          {heads.map((p, i) => <TeamCard key={p.name} person={p} delay={0.08 * (i % 4)} />)}
         </div>
       </section>
       <Footer />
