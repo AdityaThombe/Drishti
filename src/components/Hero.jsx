@@ -83,7 +83,7 @@ export default function Hero() {
         <p className="hero__when">Offline Designathon · 9 Oct 2026 · VIT, Mumbai</p>
         <Countdown />
         <div className="hero__cta">
-          <RegisterButton href={REGISTER_URL} />
+          <RegisterButton href="https://unstop.com/hackathons/drishti-vidyalankar-institute-of-technology-vit-mumbai-1755397" />
           <ExploreButton onClick={() => scrollToId('about')} />
         </div>
       </div>

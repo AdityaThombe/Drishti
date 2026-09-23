@@ -248,8 +248,8 @@ export function Footer() {
         <div data-reveal style={{ '--delay': '0.2s' }}>
           <p className="footer__title">Social Media</p>
           <ul className="footer__links footer__links--plain">
-            <li><a href="#" target="_blank" rel="noreferrer">Instagram</a></li>
-            <li><a href="#" target="_blank" rel="noreferrer">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/cesa.vit/" target="_blank" rel="noreferrer">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/company/cesa-vit/posts/?feedView=all" target="_blank" rel="noreferrer">LinkedIn</a></li>
           </ul>
         </div>
       </div>

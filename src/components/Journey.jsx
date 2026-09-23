@@ -12,29 +12,29 @@ const W = (w) => `${(w / 1440) * 100}%`
 
 const steps = [
   {
-    dot: [127.4, 86.6], date: '10th Feb', dateAt: [148, 2365], at: [467, 2350], w: 573, bodyW: 432,
-    title: 'Problem Statement (PS)',
-    points: ['PS released at 7:30 p.m. (3–4 per domain)', 'Registration opens', 'PS allotted on a first-come, first-served basis'],
+    dot: [127.4, 86.6], date: '24th Sept', dateAt: [148, 2365], at: [467, 2350], w: 573, bodyW: 432,
+    title: 'Registration Opens',
+    points: ['Registrations open for Round 1', 'Participants submit their design entry', 'Teams/participants can register through Unstop'],
   },
   {
-    dot: [127.4, 498.6], date: '11th Feb', dateAt: [156, 2810], at: [518, 2672], w: 540, bodyW: 400,
-    title: 'Submission of PS',
-    points: ['Abstract submission by 7:30 p.m. (as per given format)', 'GitHub repo submission mandatory for all members'],
+    dot: [127.4, 498.6], date: '2nd Oct', dateAt: [156, 2810], at: [518, 2672], w: 540, bodyW: 400,
+    title: 'Round 1 Submission Closes',
+    points: ['Final submission deadline for Round 1', 'Entries will be reviewed for shortlisting'],
   },
   {
-    dot: [176.4, 861.6], date: '12th Feb', dateAt: [501, 3163], at: [39, 3116], w: 369, bodyW: 260, lineW: 232,
+    dot: [176.4, 861.6], date: '5th Oct', dateAt: [501, 3163], at: [39, 3116], w: 369, bodyW: 260, lineW: 232,
     title: 'Shortlisting Announcement',
-    points: ['Shortlisted teams announced around 5 p.m.', 'Constraints and guidelines shared'],
+    points: ['Shortlisted participants announced', 'Selected participants receive further instructions'],
   },
   {
-    dot: [244.4, 1159.6], date: '13th Feb', dateAt: [474, 3393], at: [148, 3536], w: 573, bodyW: 432,
-    title: 'Final Pitching & Evaluation (Offline)',
-    points: ['On-campus final presentations', 'Jury evaluation', 'Winner declaration and closing ceremony'],
+    dot: [244.4, 1159.6], date: '9th Oct', dateAt: [474, 3393], at: [148, 3536], w: 573, bodyW: 432,
+    title: 'FoF Seminar & Design Challenge',
+    points: ['Seminar by Friends of Figma speakers', 'UI/UX, design thinking and Figma techniques', '3 problem statements revealed for the competition'],
   },
   {
-    dot: [598.4, 1053.6], date: '14th Feb', dateAt: [729, 3292], at: [753, 3453], w: 400, bodyW: 360,
-    title: 'Mentorship Day',
-    points: ['Mentoring sessions by college faculty', 'Guidance on technical approach and feasibility'],
+    dot: [598.4, 1053.6], date: '9th Oct', dateAt: [729, 3292], at: [753, 3453], w: 400, bodyW: 360,
+    title: 'Final Presentation & Evaluation',
+    points: ['Develop and present your UI/UX solution', 'Jury evaluation', 'Winner declaration'],
   },
 ]
 const FINAL_DOT = [936.4, 1355.6]
