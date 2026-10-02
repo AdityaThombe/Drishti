@@ -209,10 +209,6 @@ export function Partners() {
       </header>
       <div className="partners__row">
         <div className="partner">
-          <p className="partner__role">Community Partner</p>
-          <div className="partner__logo partner__logo--circle"><img src={img('fof.webp')} alt="FOF Mumbai" /></div>
-        </div>
-        <div className="partner">
           <p className="partner__role">Domain Partner</p>
           <div className="partner__logo"><img src={img('xyz-white.webp')} alt=".xyz" /></div>
         </div>
