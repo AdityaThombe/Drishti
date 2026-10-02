@@ -17,22 +17,17 @@ const steps = [
     points: ['Registrations open for Round 1', 'Participants submit their design entry', 'Teams/participants can register through Unstop'],
   },
   {
-    dot: [127.4, 498.6], date: '2nd Oct', dateAt: [156, 2810], at: [518, 2672], w: 540, bodyW: 400,
+    dot: [127.4, 498.6], date: '5th Oct', dateAt: [156, 2810], at: [518, 2672], w: 540, bodyW: 400,
     title: 'Round 1 Submission Closes',
     points: ['Final submission deadline for Round 1', 'Entries will be reviewed for shortlisting'],
   },
   {
-    dot: [176.4, 861.6], date: '5th Oct', dateAt: [501, 3163], at: [39, 3116], w: 369, bodyW: 260, lineW: 232,
-    title: 'Shortlisting Announcement',
-    points: ['Shortlisted participants announced', 'Selected participants receive further instructions'],
-  },
-  {
-    dot: [244.4, 1159.6], date: '9th Oct', dateAt: [474, 3393], at: [148, 3536], w: 573, bodyW: 432,
+    dot: [244.4, 1159.6], date: '10th Oct', dateAt: [474, 3393], at: [148, 3536], w: 573, bodyW: 432,
     title: 'FoF Seminar & Design Challenge',
     points: ['Seminar by Friends of Figma speakers', 'UI/UX, design thinking and Figma techniques', '3 problem statements revealed for the competition'],
   },
   {
-    dot: [598.4, 1053.6], date: '9th Oct', dateAt: [729, 3292], at: [753, 3453], w: 400, bodyW: 360,
+    dot: [598.4, 1053.6], date: '10th Oct', dateAt: [729, 3292], at: [753, 3453], w: 400, bodyW: 360,
     title: 'Final Presentation & Evaluation',
     points: ['Develop and present your UI/UX solution', 'Jury evaluation', 'Winner declaration'],
   },
@@ -146,7 +141,7 @@ export default function Journey() {
         </svg>
 
         {steps.map((s, i) => (
-          <div key={s.date}>
+          <div key={s.title}>
             <p className="ms__date" data-step={i} style={{ left: X(s.dateAt[0]), top: Y(s.dateAt[1]) }}>{s.date}</p>
             <div className="ms" data-step={i} style={{ left: X(s.at[0]), top: Y(s.at[1]), width: W(s.w) }}>
               <h3 className="ms__title">{s.title}</h3>
@@ -167,7 +162,7 @@ export default function Journey() {
       {/* Mobile: vertical timeline */}
       <ol className="journey__list" ref={listRef}>
         {steps.map((s, i) => (
-          <li key={s.date} data-lstep={i}>
+          <li key={s.title} data-lstep={i}>
             <span className="journey__list-dot" />
             <p className="ms__date">{s.date}</p>
             <h3 className="ms__title">{s.title}</h3>

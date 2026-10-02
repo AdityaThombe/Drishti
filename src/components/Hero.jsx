@@ -3,7 +3,7 @@ import { img, reducedMotion, scrollToId, useCountdown } from '../hooks'
 import { ExploreButton, RegisterButton } from './Buttons'
 
 // Offline designathon (finale) start — from the Unstop brief. Set the registration link here.
-export const EVENT_START = new Date('2026-10-09T10:00:00+05:30')
+export const EVENT_START = new Date('2026-10-10T10:00:00+05:30')
 export const REGISTER_URL = '#'
 
 // Scene layers on the 1440×1024 Figma frame. m = mouse parallax strength
@@ -80,7 +80,7 @@ export default function Hero() {
         <p className="hero__sub">
           An inter-collegiate UI/UX designathon <br />where ideas meet imagination…
         </p>
-        <p className="hero__when">Offline Designathon · 9 Oct 2026 · VIT, Mumbai</p>
+        <p className="hero__when">Offline Designathon · 10 Oct 2026 · VIT, Mumbai</p>
         <Countdown />
         <div className="hero__cta">
           <RegisterButton href="https://unstop.com/hackathons/drishti-vidyalankar-institute-of-technology-vit-mumbai-1755397" />
