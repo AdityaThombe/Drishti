@@ -72,7 +72,7 @@ export default function Hero() {
       <div className="hero__shade" />
 
       <div className="hero__content">
-        <p className="hero__eyebrow">CESA × FOF PRESENTS</p>
+        <p className="hero__eyebrow">CESA PRESENTS</p>
         <h1 className="hero__title">
           <span className="shimmer">Drishti</span>
         </h1>

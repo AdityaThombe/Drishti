@@ -28,8 +28,8 @@ const steps = [
   },
   {
     dot: [244.4, 1159.6], date: '10th Oct', dateAt: [474, 3393], at: [148, 3536], w: 573, bodyW: 432,
-    title: 'FoF Seminar & Design Challenge',
-    points: ['Seminar by Friends of Figma speakers', 'UI/UX, design thinking and Figma techniques', '3 problem statements revealed for the competition'],
+    title: 'Seminar & Design Challenge',
+    points: ['Seminar by industry speakers', 'UI/UX, design thinking and Figma techniques', '3 problem statements revealed for the competition'],
   },
   {
     dot: [598.4, 1053.6], date: '10th Oct', dateAt: [729, 3292], at: [753, 3453], w: 400, bodyW: 360,
