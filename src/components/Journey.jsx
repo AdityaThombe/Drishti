@@ -22,6 +22,11 @@ const steps = [
     points: ['Final submission deadline for Round 1', 'Entries will be reviewed for shortlisting'],
   },
   {
+    dot: [176.4, 861.6], date: '7th Oct', dateAt: [501, 3163], at: [39, 3116], w: 369, bodyW: 260, lineW: 232,
+    title: 'Shortlisting Announcement',
+    points: ['Shortlisted participants announced', 'Selected participants receive further instructions'],
+  },
+  {
     dot: [244.4, 1159.6], date: '10th Oct', dateAt: [474, 3393], at: [148, 3536], w: 573, bodyW: 432,
     title: 'FoF Seminar & Design Challenge',
     points: ['Seminar by Friends of Figma speakers', 'UI/UX, design thinking and Figma techniques', '3 problem statements revealed for the competition'],
